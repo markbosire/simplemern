@@ -9,7 +9,7 @@ const peopleRouter = require("./routes/people");
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://192.168.56.11:5173', 'http://localhost:5173']
+  origin: [`http://${process.env.IP}`, 'http://localhost:5173']
 })); 
 
 app.use("/api/v1", peopleRouter);
@@ -32,4 +32,3 @@ const start = async () => {
 }
 
 start();
-
